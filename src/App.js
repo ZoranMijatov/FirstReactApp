@@ -1,7 +1,6 @@
 import './App.css';
 import Register from './container/Register'
 import Login from './container/Login'
-import Toggle from './container/ToggleState'
 import Dashboard from './container/Dashboard'
 import Profile from './container/Profile'
 import { useState } from 'react';
@@ -24,8 +23,8 @@ function App() {
         </Button>
         
           <div className="actionButtons">
-          {login ? <Profile>Profile</Profile> : <Login>Login</Login>}
-          {login ? <Dashboard>Dashboard</Dashboard> : <Register>Register</Register>}
+          {login ? <Profile /> : <Login />}
+          {login ? <Dashboard /> : <Register />}
 
           </div>
       </div>
