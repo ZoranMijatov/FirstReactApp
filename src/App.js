@@ -5,7 +5,7 @@ import Dashboard from './container/Dashboard'
 import Profile from './container/Profile'
 import { useState } from 'react';
 import Button from './Button';
-import {getLoginData} from './services/authService'
+import LoginForm from './Form';
 
 function App() {
   
@@ -13,16 +13,8 @@ function App() {
 
   const toggleLogin = () => {
     setLogin(!login);
-    handleLogin("zzz", "xxx")
   }
 
-  const handleLogin = (email, password) => {
-    getLoginData(email, password).then(response => {
-      console.log(response);
-    }).catch(error => {
-      console.log(error);
-    })
-  }
 
   return (
     <div className="App">
@@ -38,7 +30,7 @@ function App() {
 
           </div>
       </div>
-
+      <LoginForm />
     </div>
   );
 }

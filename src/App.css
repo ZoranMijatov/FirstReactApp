@@ -16,3 +16,56 @@
 .Dashboard ul {
   list-style: none;
 }
+
+.Form-Inner {
+  max-width: 610px;
+  background: #333;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px 0px;
+  border-radius: 7px;
+  margin: auto;
+  margin-top: 120px;
+}
+
+.Form-Group {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 70px 0;
+  margin-left: 120px;
+}
+
+.Input-Fields {
+  max-width: 340px;
+  width: 100%;
+  height: 43px;
+  border-radius: 3px;
+  outline: 0;
+  background: #222;
+  border: none;
+  display: flex;
+  text-align: left;
+  margin: 10px 0;
+  color: white;
+}
+
+.Form-Group input:focus {
+  border: 1px solid #39A2DB;
+}
+
+.Submit {
+  background: #39A2DB;
+  max-width: 340px;
+  border-radius: 3px;
+  border: none;
+  height: 43px;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+p {
+color:white;
+}
