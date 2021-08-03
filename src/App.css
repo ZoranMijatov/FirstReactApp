@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .Menu {
   display: flex;
   justify-content: space-between;
@@ -48,6 +53,7 @@
   text-align: left;
   margin: 10px 0;
   color: white;
+  padding-left: 10px;
 }
 
 .Form-Group input:focus {
@@ -67,3 +73,8 @@
   cursor: pointer;
 }
 
+.Submit:disabled {
+  background: lightgrey;
+  color: #777;
+  cursor: not-allowed;
+}
