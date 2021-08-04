@@ -5,7 +5,9 @@ import Dashboard from './container/Dashboard'
 import Profile from './container/Profile'
 import { useState } from 'react';
 import Button from './Button';
-import LoginForm from './Form';
+import LoginForm from './Form/LoginForm';
+import RegisterForm from './Form/RegisterForm';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 
 function App() {
   
@@ -17,21 +19,27 @@ function App() {
 
 
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
 
-      <div className="Menu">
-        <Button onClick={toggleLogin} type="BtnFilled">
-          Toggle Login
-        </Button>
-        
-          <div className="actionButtons">
-          {login ? <Profile /> : <Login />}
-          {login ? <Dashboard /> : <Register />}
+        <div className="Menu">
+          
+            <div className="actionButtons">
+            {login ? <Profile /> : <Link to="/login"><Login /></Link>}
+            {login ? <Dashboard /> : <Link to="/"><Register /></Link>}
 
-          </div>
+            </div>
+        </div>
+        <Switch>
+          <Route exact path='/'>
+            <RegisterForm />
+          </Route>
+          <Route path='/login'>
+            <LoginForm />
+          </Route>
+        </Switch>
       </div>
-      <LoginForm />
-    </div>
+    </Router>
   );
 }
 

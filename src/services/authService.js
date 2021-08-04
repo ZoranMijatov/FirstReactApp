@@ -1,10 +1,10 @@
 export const getLoginData = async (username, password) => {
   await new Promise((resolve) => setTimeout(resolve, Math.floor(Math.random() * 1500)));
-  if(username === 'zoran' && password === 'zoran'){
+  const storedName = localStorage.getItem('username');
+  const storedPwd = localStorage.getItem('pwd');
+  if(username === storedName && password === storedPwd){
     return Promise.resolve({
-      first_name: 'Pera',
-      last_name: 'Simic',
-      age: 22,
+    message: 'Success'
     });
   } else {
     return Promise.reject({

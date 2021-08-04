@@ -5,7 +5,7 @@
 
 .Menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
   padding-top: 25px;
   padding-right: 25px;
 }
@@ -77,4 +77,8 @@
   background: lightgrey;
   color: #777;
   cursor: not-allowed;
+}
+
+.Login {
+  margin-bottom: 100px;
 }
