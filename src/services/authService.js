@@ -3,6 +3,7 @@ export const getLoginData = async (username, password) => {
   const storedName = localStorage.getItem('username');
   const storedPwd = localStorage.getItem('pwd');
   if(username === storedName && password === storedPwd){
+    localStorage.setItem('loginSuccess', true)
     return Promise.resolve({
     message: 'Success'
     });
