@@ -3,11 +3,24 @@
   padding: 0;
 }
 
+.HeroImg {
+  background-image: url(./HeroImg.jpg);
+  background-size: cover;
+  width: 100%;
+  background-position: center;
+  height: 100vh;
+}
+
 .Menu {
   display: flex;
-  justify-content: right;
-  padding-top: 25px;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
   padding-right: 25px;
+}
+
+svg {
+  padding-left: 25px;
 }
 
 .Dashboard {
@@ -23,12 +36,13 @@
 }
 
 .Form-Inner {
-  max-width: 610px;
-  background: #333;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px 0px;
+  max-width: 700px;
+  background: #222;
+  box-shadow: -7px 8px 26px -10px rgba(98,83,225,0.7);
   border-radius: 7px;
   margin: auto;
-  margin-top: 120px;
+  margin-top: 50px;
+  margin-bottom: 160px;
 }
 
 .Form-Group {
@@ -38,7 +52,11 @@
   font-size: 16px;
   font-weight: bold;
   padding: 70px 0;
-  margin-left: 120px;
+  margin-left: 50px;
+}
+
+h2 {
+  padding-bottom: 50px;
 }
 
 .Input-Fields {
@@ -47,7 +65,8 @@
   height: 43px;
   border-radius: 3px;
   outline: 0;
-  background: #222;
+  background: #444;
+  border-radius: 10px;
   border: none;
   display: flex;
   text-align: left;
@@ -57,21 +76,23 @@
 }
 
 .Form-Group input:focus {
-  border: 1px solid #39A2DB;
+  border: 3px solid #6253e1;
 }
 
 .Submit {
-  background: #39A2DB;
-  max-width: 340px;
+  background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+  background-size: 300% 100%;
+  max-width: 190px;
   width: 100%;
-  border-radius: 3px;
+  border-radius: 10px;
   border: none;
-  height: 43px;
+  height: 50px;
   color: white;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .Submit:disabled {
