@@ -1,9 +1,10 @@
 import React from 'react'
-import Button from '../Button';
 
 const Dashboard = () => {
     return (
-        <Button type="BtnFilled">Dashboard</Button>
+        <div>
+            <h1>Dashboard</h1>
+        </div>
     )
 }
 
