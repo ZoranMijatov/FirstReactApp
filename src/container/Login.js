@@ -3,7 +3,7 @@ import Button from '../Button';
 
 const Login = () => {
     return (
-        <Button type="BtnEmpty">Login</Button>
+        <Button type="BtnFilled">Login</Button>
     )
 }
 

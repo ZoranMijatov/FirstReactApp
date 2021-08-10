@@ -1,7 +1,4 @@
-import Dashboard from "./Dashboard";
-import Profile from "./Profile";
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'; 
-import styled from "styled-components";
 import React from 'react'
 
 const Sidebar = () => {

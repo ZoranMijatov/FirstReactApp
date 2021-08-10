@@ -3,13 +3,27 @@
   padding: 0;
 }
 
-/* .HeroImg {
-  background-image: url(./HeroImg.jpg);
+.HeroImg {
+  background-image: url(./Hero70.jpg);
   background-size: cover;
   width: 100%;
   background-position: center;
   height: 100vh;
-} */
+}
+
+.Content-Wrap {
+  display: flex;
+}
+
+.Flex-Wrapper {
+  grid-template-columns: 1fr 2fr 2fr;
+  gap: 20px;
+}
+
+.Flex-Item {
+  background-color: #222;
+  border-radius: 10px;
+}
 
 .Menu {
   display: flex;
@@ -43,18 +57,18 @@ svg {
   display: flex;
   justify-content: space-between;
   max-width: 700px;
-  background: #222;
+  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+  background-blend-mode: multiply;
   box-shadow: -7px 8px 26px -10px rgba(26, 25, 25, 0.7);
   border-radius: 7px;
   margin: auto;
   margin-top: 50px;
-  margin-bottom: 160px;
 }
 
 .Form-Group {
   display: flex;
   flex-direction: column;
-  color: white;
+  color: #fff;
   font-size: 16px;
   font-weight: bold;
   padding: 70px 0;
@@ -71,7 +85,7 @@ h2 {
   font-size: 16px;
   border-radius: 3px;
   outline: 0;
-  background: #444;
+  background: #222;
   border-radius: 10px;
   border: none;
   display: flex;
@@ -86,10 +100,8 @@ h2 {
 }
 
 .Sidebar {
-  width: 20vh;
-  position: absolute;
-  left: 0;
-  padding-top: 120px;
+  height: 100%;
+  width: 20vw;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -97,18 +109,20 @@ h2 {
 
 .Link {
   text-decoration: none;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 20px;
   padding-left: 20px;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  color: #333;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #fff;
+  display: inline-block;
+  width: 150px;
 }
 
 .Link:focus {
-  border-left: 5px solid #6253e1;
-  color: #6253e1;
+  border-left: 5px solid #fff;
+  color: #fff;
   padding-left: 20px;
+  font-weight: bold;
 }
 
 .Submit {
