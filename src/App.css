@@ -17,12 +17,13 @@
 }
 
 .Flex-Wrapper {
-  grid-template-columns: 1fr 2fr 2fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
 .Flex-Item {
-  background-color: #222;
+  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.70) 200%);
   border-radius: 10px;
 }
 
@@ -108,10 +109,9 @@ h2 {
   width: 370px;
   height: 50px;
   font-size: 16px;
-  border-radius: 3px;
+  border-radius: 7px;
   outline: 0;
   background: #222;
-  border-radius: 10px;
   border: none;
   display: flex;
   text-align: left;
@@ -155,7 +155,7 @@ h2 {
   background-size: 300% 100%;
   max-width: 190px;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 7px;
   border: none;
   height: 50px;
   color: white;
@@ -171,4 +171,31 @@ h2 {
   color: #777;
   cursor: not-allowed;
 }
+
+.Weather-Wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Weather-Wrapper h1 {
+  color: white;
+  padding: 40px 20px;
+}
+
+.Weather-Wrapper input {
+  margin: 10px 20px 0;
+  height: 50px;
+  font-size: 16px;
+  border-radius: 7px;
+  outline: 0;
+  background: #222;
+  border: none;
+  display: flex;
+  text-align: left;
+  color: white;
+  padding-left: 10px;
+}
+
 
