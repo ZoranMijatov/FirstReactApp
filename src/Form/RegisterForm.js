@@ -44,7 +44,9 @@ const RegisterForm = () => {
             <form className="Form-Inner" onSubmit={handleLogin}>
                 <div className="Form-Group Login">
                     <h2>Welcome, please register below</h2>
+                    
                     <label htmlFor="name">Email:</label>
+                    
                     <input className="Input-Fields"
                     type="text"
                     value={email}
@@ -66,12 +68,19 @@ const RegisterForm = () => {
             
                     {!strongPass.test(password) && <p style={{color: 'red'}}>Invalid Password</p>}
             
+                    <label htmlFor="age">Date of birth:</label>
+                    <input 
+                    className="Input-Fields"
+                    type="age" 
+                    />
+                    
                     <input
                     className="Submit"
                     type="submit"
                     value="Submit"
                     disabled = {!strongPass.test(password) || !valEmail.test(email)}
                     />
+
                 </div>
             </form>
 

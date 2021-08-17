@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import Button from '../../../Button';
-import BtnEmpty from '../../../Button/BtnEmpty';
 
 const RandomAdvice = () => {
     const [advice, setAdvice] = useState('')
@@ -23,7 +22,7 @@ const RandomAdvice = () => {
     return (
         <>
             <h2>{advice}</h2>
-            <Button type="BtnEmpty">New Advice</Button>
+            <Button type="BtnEmpty" onClick={() => getAdvice()}>New Advice</Button>
         </>
     )
 }
