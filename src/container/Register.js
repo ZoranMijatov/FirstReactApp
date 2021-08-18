@@ -3,7 +3,7 @@ import Button from '../Button';
 
 const Register = () => {
     return (
-        <Button type="BtnEmpty"><span>Sign Up</span></Button>
+        <Button type="ButtonGhost"><span>Sign Up</span></Button>
     )
 }
 

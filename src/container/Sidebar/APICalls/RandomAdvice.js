@@ -22,7 +22,7 @@ const RandomAdvice = () => {
     return (
         <>
             <h2>{advice}</h2>
-            <Button type="BtnEmpty" onClick={() => getAdvice()}>New Advice</Button>
+            <Button type="ButtonGhost" onClick={() => getAdvice()}>New Advice</Button>
         </>
     )
 }

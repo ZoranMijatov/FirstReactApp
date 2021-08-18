@@ -16,13 +16,14 @@ export const backgroundTheme = theme("theme", {
   });
 
 const FlexItemStyle = styled.div`
-width: 500px;
+width: ${props => props.width};
+heigth: ${props => props.height};
 border-radius: 7px;
 background: ${backgroundTheme};
 color: ${textTheme};
 box-shadow: -7px 8px 26px -10px rgba(26, 25, 25, 0.7);
     &:first-child {
-        padding: 50px 20px;
+        padding: 50px 20px 50px;
         text-align: center;
         font-family: 'Montserrat', sans-serif;
     }
@@ -33,27 +34,35 @@ const Dashboard = () => {
             <LightThemeProvider>
 
                 <div className = "Flex-Wrapper">
-                    <div className="Flex-Item Flex-Item1">
-                        <Weather />    
+                    <div>
+                        <FlexItemStyle><Weather /></FlexItemStyle>   
                     </div>
                     <div className="Flex-Item Flex-Item2">
-                        <FlexItemStyle><RandomAdvice/></FlexItemStyle>
+                        <FlexItemStyle width="500px"><RandomAdvice/></FlexItemStyle>
                     </div>
 
                     <div className="Flex-Item Flex-Item3">
-                        <h1>Yes</h1>
+                        <FlexItemStyle>
+                            <h1>Content</h1>
+                        </FlexItemStyle>Content
                     </div>
 
                     <div className="Flex-Item Flex-Item4">
-                        <h1>Yes</h1>
+                        <FlexItemStyle>
+                            <h1>Content</h1>
+                        </FlexItemStyle>
                     </div>
 
                     <div className="Flex-Item Flex-Item5">
-                        <h1>Yes</h1>
+                        <FlexItemStyle>
+                            <h1>Content</h1>
+                        </FlexItemStyle>
                     </div>
 
                     <div className="Flex-Item Flex-Item6">
-                        <h1>Yes</h1>
+                        <FlexItemStyle>
+                            <h1>Content</h1>
+                        </FlexItemStyle>
                     </div>
 
                 </div>

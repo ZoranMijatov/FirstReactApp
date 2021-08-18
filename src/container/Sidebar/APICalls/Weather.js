@@ -29,7 +29,7 @@ const Weather = () => {
             onChange={(e) => setCity(e.target.value)}    
             />
 
-            <Button type="BtnEmpty" onClick={() => getWeather(city)}>Get Weather</Button>
+            <Button type="ButtonGhost" onClick={() => getWeather(city)}>Get Weather</Button>
         </div>
     )
 }

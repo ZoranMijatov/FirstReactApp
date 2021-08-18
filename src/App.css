@@ -22,11 +22,6 @@
   gap: 20px;
 }
 
-.Flex-Item {
-  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.70) 200%);
-  border-radius: 10px;
-}
-
 .Menu {
   display: flex;
   justify-content: space-between;
@@ -67,7 +62,7 @@ svg {
 .Dashboard {
   list-style: none;
   background: #6253e1;
-  color: white; 
+  color: white;
   width: 16vw;
   height: 100vh;
 }
@@ -81,7 +76,12 @@ svg {
   display: flex;
   justify-content: space-between;
   width: 660px;
-  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
+    linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(0, 0, 0, 0.25) 200%
+    );
   background-blend-mode: multiply;
   box-shadow: -7px 8px 26px -10px rgba(26, 25, 25, 0.7);
   border-radius: 7px;
@@ -151,7 +151,7 @@ h2 {
 }
 
 .Submit {
-  background-image: linear-gradient(to right, #6253e1, #852D91, #A3A1FF, #F24645);
+  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
   background-size: 300% 100%;
   max-width: 190px;
   width: 100%;
@@ -166,6 +166,10 @@ h2 {
   margin-top: 20px;
 }
 
+.Submit:hover {
+  box-shadow: 0 0 10px 0 #6253e1 inset, 0 0 20px 2px #6253e1;
+}
+
 .Submit:disabled {
   background: lightgrey;
   color: #777;
@@ -177,11 +181,6 @@ h2 {
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.Weather-Wrapper h1 {
-  color: white;
-  padding: 40px 20px;
 }
 
 .Weather-Wrapper input {
@@ -222,7 +221,7 @@ h2 {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -233,15 +232,15 @@ h2 {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
@@ -256,4 +255,3 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-
