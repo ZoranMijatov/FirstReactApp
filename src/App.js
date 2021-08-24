@@ -13,6 +13,7 @@ import {BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-rout
 import LightModeToggle from './container/LightMode';
 import { Provider as ReduxProvider } from "react-redux";
 import store from './Redux/store';
+import GalaxyStore from './GalaxyStore';
 
 function App() {
   
@@ -60,6 +61,9 @@ function App() {
                 </Route>
                 <Route path='/profile'>
                 {loginSuccess ? <Profile /> : <Redirect to = "/login" /> }
+                </Route>
+                <Route path='/galaxystore'>
+                {loginSuccess ? <GalaxyStore /> : <Redirect to = "/login" /> }
                 </Route>
               </Switch>
             </div>
