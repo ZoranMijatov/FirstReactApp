@@ -21,20 +21,39 @@ const GalaxyStore = () => {
             title: "Rocket",
             description: "Text about the product"
         },
-
         {
             image: "Link",
-            title: "Atom Bomb",
+            title: "Atom-Bomb",
             description: "Text about the product"
-        }
+        },
+        {
+            image: "Link",
+            title: "Alien",
+            description: "Text about the product"
+        },
+        {
+            image: "Link",
+            title: "Ufo",
+            description: "Text about the product"
+        },
+        {
+            image: "Link",
+            title: "Laser",
+            description: "Text about the product"
+        },
+        {
+            image: "Link",
+            title: "Asteroid",
+            description: "Text about the product"
+        },
     ]
     return (
         <Router>
-            <Route exact path="/galaxystore">
+            <Route path="/galaxystore">
                 <Hero products={products} />
             </Route>
-            <Route>
-                <FullCard products={products} path="/galaxystore/:title" />
+            <Route path="/cards/:title">
+                <FullCard products={products}/>
             </Route>
         </Router>
     )
