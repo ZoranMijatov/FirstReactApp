@@ -1,9 +1,9 @@
 import React from 'react'
-import {getLoginData} from '../services/authService'
 import {useState} from 'react';
+import { FormWrapper, FormGroup } from './Styles';
 
 const LoginForm = (props) => {
-    const strongPass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    const strongPass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})");
     const valEmail = new RegExp(/\S+@\S+\.\S+/);
     
     const [email, setEmail] = useState('')
@@ -20,9 +20,9 @@ const LoginForm = (props) => {
         setPassword(e.target.value);
     }
     return (
-        <div className="Form-Wrapper">
-            <form className="Form-Inner" onSubmit={handleLogin}>
-                <div className="Form-Group Login">
+        <FormWrapper>
+            <form onSubmit={handleLogin}>
+                <FormGroup>
                     <h2>Welcome back, please login</h2>
                     <label htmlFor="name">Email:</label>
                     <input className="Input-Fields"
@@ -52,12 +52,12 @@ const LoginForm = (props) => {
                     value="Login"
                     disabled = {!strongPass.test(password) || !valEmail.test(email)}
                     />
-                </div>
+                </FormGroup>
             </form>
 
             <div className="AstronautLogin">
             </div>
-        </div>
+        </FormWrapper>
     )
 }
 

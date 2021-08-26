@@ -1,11 +1,12 @@
 import React from 'react'
-import {useState} from 'react';
-import {useHistory} from 'react-router-dom';
+import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { FormWrapper, FormGroup } from './Styles';
 
 const RegisterForm = () => {
     let history = useHistory();
 
-    const strongPass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+    const strongPass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})");
     const valEmail = new RegExp(/\S+@\S+\.\S+/);
 
     const [email, setEmail] = useState('')
@@ -40,9 +41,9 @@ const RegisterForm = () => {
     }
 
     return (
-        <div className="Form-Wrapper">
-            <form className="Form-Inner" onSubmit={handleLogin}>
-                <div className="Form-Group Login">
+        <FormWrapper>
+            <form onSubmit={handleLogin}>
+                <FormGroup>
                     <h2>Welcome, please register below</h2>
                     
                     <label htmlFor="name">Email:</label>
@@ -81,12 +82,11 @@ const RegisterForm = () => {
                     disabled = {!strongPass.test(password) || !valEmail.test(email)}
                     />
 
-                </div>
+                </FormGroup>
             </form>
 
-            <div className="Astronaut">
-            </div>
-        </div>
+            <div className="Astronaut" />
+        </FormWrapper>
     )
 }
 

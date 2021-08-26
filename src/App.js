@@ -8,7 +8,7 @@ import { useState } from 'react';
 import {getLoginData} from './services/authService'
 import LoginForm from './Form/LoginForm';
 import RegisterForm from './Form/RegisterForm';
-import Sidebar from './container/Sidebar/Sidebar';
+import Sidebar from './container/Sidebar/SidebarNav';
 import {BrowserRouter as Router, Switch, Route, Link, Redirect} from 'react-router-dom';
 import LightModeToggle from './container/LightMode';
 import { Provider as ReduxProvider } from "react-redux";
@@ -56,15 +56,9 @@ function App() {
                 <Route path='/login'>
                   <LoginForm handleLogin={handleLogin} />
                 </Route>
-                <Route path='/dashboard'>
-                  {loginSuccess ? <Dashboard /> : <Redirect to = "/login" /> }
-                </Route>
-                <Route path='/profile'>
-                {loginSuccess ? <Profile /> : <Redirect to = "/login" /> }
-                </Route>
-                <Route path='/galaxystore'>
-                {loginSuccess ? <GalaxyStore /> : <Redirect to = "/login" /> }
-                </Route>
+                  {loginSuccess ? 
+                  <><Route path='/dashboard' component={Dashboard} /><Route path='/profile' component={Profile} /><Route path='/galaxystore' component={GalaxyStore} /></> 
+                  : <Redirect to = "/login" /> }
               </Switch>
             </div>
           </div>
