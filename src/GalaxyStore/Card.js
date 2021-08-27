@@ -22,9 +22,9 @@ const CardStyle = styled.div`
   & .Product-Link {
     display: block;
     margin: 0 auto;
-    padding-top: 12px;
+    padding-top: 7px;
     width: 140px;
-    height: 37px;
+    height: 43px;
     background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
     background-size: 300% 100%;
     color: #fff;

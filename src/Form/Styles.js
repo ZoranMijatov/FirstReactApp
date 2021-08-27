@@ -19,7 +19,6 @@ export const FormWrapper = styled.div`
   margin-top: 50px;
 `;
 
-
 export const FormGroup = styled.div`
   position: relative;
   z-index: 1;
@@ -30,4 +29,52 @@ export const FormGroup = styled.div`
   font-weight: bold;
   padding: 50px 0;
   margin-left: 50px;
+      
+      input:focus {
+        border: 3px solid #6253e1;
+      }
+`
+
+// margin: 10px 20px 0;
+//   outline: 0;
+//   border: none;
+//   display: flex;
+//   padding-left: 10px;
+
+// .Input-Fields {
+//   width: 370px;
+//   outline: 0;
+//   border: none;
+//   display: flex;
+//   margin: 10px 0;
+//   padding-left: 10px;
+// }
+
+export const Input = styled.input`
+  background: ${props => props.Submit ? 'linear-gradient(to right, #6a11cb 0%, #2575fc 100%)' : '#222'};
+  text-align: ${props => props.Submit ? 'center' : 'left'};
+  background-size: 300% 100%;
+  width: ${props => props.Submit || props.WeatherInput ? '190px' : '370px'};
+  outline: none;
+  border-radius: 7px;
+  border: none;
+  height: 50px;
+  color: white;
+  font-weight: ${props => props.Submit ? 'bold' : 'regular'};
+  margin-top: 10px;
+  font-size: 16px;
+  cursor: ${props => props.Submit ? 'pointer' : 'regular'};
+  padding-left: ${props => props.Submit ? '0' : '10px'};
+  margin: ${props => props.Submit ? '20px 0 0' : '10px 0 10px'};
+      
+      &:hover {
+        box-shadow: ${props => props.Submit ? '0 0 10px 0 #6253e1 inset, 0 0 20px 2px #6253e1' : 'none'};
+      }
+      
+      &:disabled {
+        background: lightgrey;
+        color: #777;
+        cursor: not-allowed;
+        box-shadow: none;
+      }
 `

@@ -1,6 +1,7 @@
 import React from 'react'
 import {useState} from 'react';
 import { FormWrapper, FormGroup } from './Styles';
+import { Input } from './Styles';
 
 const LoginForm = (props) => {
     const strongPass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})");
@@ -25,7 +26,7 @@ const LoginForm = (props) => {
                 <FormGroup>
                     <h2>Welcome back, please login</h2>
                     <label htmlFor="name">Email:</label>
-                    <input className="Input-Fields"
+                    <Input className="Input-Fields"
                     type="text"
                     value={email}
                     onChange={handleEmailChange}
@@ -36,7 +37,7 @@ const LoginForm = (props) => {
             
                     <label htmlFor="password">Password:</label>
             
-                    <input
+                    <Input
                     className="Input-Fields Input-Password"
                     type="password"
                     value={password}
@@ -46,9 +47,9 @@ const LoginForm = (props) => {
             
                     {!strongPass.test(password) && <p style={{color: 'red'}}>Invalid Password</p>}
             
-                    <input
-                    className="Submit"
+                    <Input
                     type="submit"
+                    Submit
                     value="Login"
                     disabled = {!strongPass.test(password) || !valEmail.test(email)}
                     />

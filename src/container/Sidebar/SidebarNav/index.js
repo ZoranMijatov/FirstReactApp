@@ -1,19 +1,12 @@
-import { NavLink } from 'react-router-dom'; 
 import React from 'react'
-import { SidebarLink, SidebarWrapper } from './Styles';
+import { SidebarWrapper, StyledNavLink } from './Styles';
 
 const Sidebar = () => {
     return (
         <SidebarWrapper>
-            <SidebarLink>
-                <NavLink className="Link" activeClassName = "Link-Active" to="/dashboard">Dashboard</NavLink>
-            </SidebarLink>
-            <SidebarLink>
-                <NavLink className="Link" activeClassName = "Link-Active" to="/profile">Profile</NavLink>
-            </SidebarLink>
-            <SidebarLink>
-                <NavLink className="Link" activeClassName = "Link-Active" to="/galaxystore">Galaxy Store</NavLink>
-            </SidebarLink>
+            <StyledNavLink className="Link" activeClassName = "Link-Active" to="/dashboard">Dashboard</StyledNavLink>
+            <StyledNavLink className="Link" activeClassName = "Link-Active" to="/profile">Profile</StyledNavLink>
+            <StyledNavLink className="Link" activeClassName = "Link-Active" to="/galaxystore">Galaxy Store</StyledNavLink>
         </SidebarWrapper>
     )
 }

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const HeroFlex = styled.div`
     display: flex;
-    gap: 50px;
+    gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
 `

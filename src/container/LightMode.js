@@ -8,13 +8,13 @@ const LightModeToggle = () => {
     const dispatch = useDispatch();
 
     return (
-            <label class="switch">
+            <label className="switch">
                 <input 
                 type="checkbox" 
                 checked={lightModeEnabled}
                 onChange={() => dispatch({ type: LIGHTMODE_TOGGLE })}
                 />
-                <span class="slider round"></span>
+                <span className="slider round"></span>
             </label>
     )
 }

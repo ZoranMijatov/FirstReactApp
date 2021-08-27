@@ -1,11 +1,15 @@
 import styled from "styled-components"
+import { NavLink } from "react-router-dom"
 
-export const SidebarLink = styled.div`
+export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   font-size: 20px;
   color: #fff;
   display: inline-block;
   width: 150px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 20px;
 `
 
 export const SidebarWrapper = styled.div`

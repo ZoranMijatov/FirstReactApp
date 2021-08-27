@@ -19,7 +19,7 @@ const Dashboard = () => {
                     <div className="Flex-Item Flex-Item3">
                         <FlexItemStyle>
                             <h1>Content</h1>
-                        </FlexItemStyle>Content
+                        </FlexItemStyle>
                     </div>
 
                     <div className="Flex-Item Flex-Item4">

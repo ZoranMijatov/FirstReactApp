@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FormWrapper, FormGroup } from './Styles';
+import { Input } from './Styles';
 
 const RegisterForm = () => {
     let history = useHistory();
@@ -48,7 +49,7 @@ const RegisterForm = () => {
                     
                     <label htmlFor="name">Email:</label>
                     
-                    <input className="Input-Fields"
+                    <Input 
                     type="text"
                     value={email}
                     onChange={handleEmailChange}
@@ -59,8 +60,7 @@ const RegisterForm = () => {
             
                     <label htmlFor="password">Password:</label>
             
-                    <input
-                    className="Input-Fields Input-Password"
+                    <Input
                     type="password"
                     value={password}
                     onChange={handlePasswordChange}
@@ -70,13 +70,12 @@ const RegisterForm = () => {
                     {!strongPass.test(password) && <p style={{color: 'red'}}>Invalid Password</p>}
             
                     <label htmlFor="age">Date of birth:</label>
-                    <input 
-                    className="Input-Fields"
+                    <Input 
                     type="age" 
                     />
                     
-                    <input
-                    className="Submit"
+                    <Input
+                    Submit
                     type="submit"
                     value="Submit"
                     disabled = {!strongPass.test(password) || !valEmail.test(email)}

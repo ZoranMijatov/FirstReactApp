@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import Button from '../../../Button';
+import { WeatherWrapper } from './Styles';
+import { Input } from '../../../Form/Styles';
 
 const Weather = () => {
     const [temperature, setTemperature] = useState('');
@@ -20,17 +22,18 @@ const Weather = () => {
     }
 
     return (
-        <div className="Weather-Wrapper">
+        <WeatherWrapper>
             <h1>{Math.round(temperature * 100) / 100} °C</h1>
 
-            <input 
+            <Input 
+            WeatherInput
             type="text"
             value= {city}
             onChange={(e) => setCity(e.target.value)}    
             />
 
-            <Button type="ButtonGhost" onClick={() => getWeather(city)}>Get Weather</Button>
-        </div>
+            <Button onClick={() => getWeather(city)}>Get Weather</Button>
+        </WeatherWrapper>
     )
 }
 
