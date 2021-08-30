@@ -14,7 +14,6 @@ import LightModeToggle from './container/LightMode';
 import { Provider as ReduxProvider } from "react-redux";
 import store from './Redux/store';
 import GalaxyStore from './GalaxyStore';
-import { GlobalStyle } from './GlobalStyle';
 
 function App() {
   
@@ -36,7 +35,6 @@ function App() {
   
   return (
     <ReduxProvider store={store}>
-      <GlobalStyle />
         <Router>
           <div> 
             <div className="HeroImg">
