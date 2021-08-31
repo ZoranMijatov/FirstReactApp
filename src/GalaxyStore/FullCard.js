@@ -20,7 +20,7 @@ const FullCard = ({ products }) => {
                 <div className="Flex-Wrapper" key={id}>
                     
                     <div className="Flex-Right-Half">
-                        <p>{product.image}</p>
+                        <img src={product.image} alt="" />
                     </div>
 
                     <div className="Flex-Left-Half">

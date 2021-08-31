@@ -7,6 +7,7 @@ const HeroFlex = styled.div`
     gap: 30px;
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
 `
 
 const Hero = ({ products }) => {

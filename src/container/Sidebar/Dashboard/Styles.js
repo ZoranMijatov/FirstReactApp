@@ -2,14 +2,24 @@ import styled from "styled-components"
 import theme from "styled-theming";
 
 const backgroundTheme = theme("theme", {
-    light: "linear-gradient(to top, #dfe9f3 0%, white 100%);",
-    dark: "linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.70) 200%);",
+    light: "rgba(255, 255, 255, 0.2);",
+    dark: "rgba(0, 0, 0, 0.2);",
   });
   
 const textTheme = theme("theme", {
-    light: "#222",
+    light: "#111",
     dark: "#fff",
   });
+
+const shadowTheme = theme("theme", {
+  light: "20px 20px 50px rgba(0, 0, 0, 0.3)",
+  dark: "20px 20px 50px rgba(255, 255, 255, 0.3)",
+});
+
+const borderTheme = theme("theme", {
+  light: "1px solid rgba(255, 255, 255, 0.5)",
+  dark: "1px solid rgba(0, 0, 0, 0.5)",
+});
 
 export const FlexItemStyle = styled.div`
 width: ${props => props.width};
@@ -17,7 +27,9 @@ height: ${props => props.height};
 border-radius: 7px;
 background: ${backgroundTheme};
 color: ${textTheme};
-box-shadow: -7px 8px 26px -10px rgba(26, 25, 25, 0.7);
+box-shadow: ${shadowTheme};
+border-left: ${borderTheme};
+border-top: ${borderTheme};
     &:first-child {
         padding: 50px 20px 50px;
         text-align: center;

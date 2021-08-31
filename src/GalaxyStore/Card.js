@@ -17,6 +17,12 @@ const CardStyle = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+  }
+
+  & img {
+    position: absolute;
+    transform: translate(-15%, -50%);
   }
 
   & .Product-Link {
@@ -34,6 +40,7 @@ const CardStyle = styled.div`
     margin-top: 50%;
     border-radius: 7px;
     transition: all ease-in-out 0.3s;
+    z-index: 1;
         &:hover {
             scale: 1.1;
         }

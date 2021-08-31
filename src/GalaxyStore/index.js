@@ -3,12 +3,22 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Hero from './Hero'
 import FullCard from './FullCard'
 import Cart from './Cart'
+import Aircraft from './ItemsSVG/Aircraft.svg'
+import Asteroid from './ItemsSVG/Asteroid.svg'
+import Earth from './ItemsSVG/Earth.svg'
+import Telescope from './ItemsSVG/Telescope.svg'
+import Rocket from './ItemsSVG/Rocket.svg'
+import styled from 'styled-components'
+
+const AstrounautCartWrapper = styled.div`
+    position: relative;
+`
 
 const GalaxyStore = () => {
 
     const products = [
         {
-            image: "Link, Link, link, link",
+            image: Rocket,
             title: "Satellite",
             description: "Text about the product",
             price: '1,000,000$'
@@ -20,7 +30,7 @@ const GalaxyStore = () => {
             price: '1,000,000$'
         },
         {
-            image: "Link, Link, link, link",
+            image: Aircraft,
             title: "Rocket",
             description: "Text about the product",
             price: '1,000,000$'
@@ -44,20 +54,20 @@ const GalaxyStore = () => {
             price: '1,000,000$'
         },
         {
-            image: "Link, Link, link, link",
-            title: "Laser",
+            image: Earth,
+            title: "Earth",
             description: "Text about the product",
             price: '1,000,000$'
         },
         {
-            image: "LinkLink, Link, link, link",
+            image: Asteroid,
             title: "Asteroid",
             description: "Text about the product",
             price: '1,000,000$'
         },
         {
-            image: "Link, Link, link, link",
-            title: "Supernova",
+            image: Telescope,
+            title: "Telescope",
             description: "Text about the product",
             price: '1,000,000$'
         },
@@ -69,15 +79,17 @@ const GalaxyStore = () => {
         }
     ]
     return (
-        <Router>
-            <Route path="/galaxystore">
-                <Hero products={products} />
-                <Cart />
-            </Route>
-            <Route path="/cards/:title">
-                <FullCard products={products}/>
-            </Route>
-        </Router>
+        <AstrounautCartWrapper>
+            <Router>
+                <Route path="/galaxystore">
+                    <Hero products={products} />
+                    <Cart />        
+                </Route>
+                <Route path="/cards/:title">
+                    <FullCard products={products}/>
+                </Route>
+            </Router>
+        </AstrounautCartWrapper>
     )
 }
 

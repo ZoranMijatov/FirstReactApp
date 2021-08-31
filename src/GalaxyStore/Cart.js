@@ -1,9 +1,11 @@
 import React from 'react'
 
+
+
 const Cart = () => {
     return (
-        <div>
-            Le Cart
+        <div className="AstronautCart">
+            
         </div>
     )
 }

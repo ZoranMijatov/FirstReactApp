@@ -1,4 +1,4 @@
-import * as actions from "./actions";
+import * as actions from '../actions';
 import { combineReducers } from "redux";
 
 const preferences = (state = { lightModeEnabled: false }, action) => {
