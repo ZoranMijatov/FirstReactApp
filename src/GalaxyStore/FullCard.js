@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
 const FullCardStyle = styled.div`
     width: 100%;
@@ -11,13 +12,14 @@ const FullCardStyle = styled.div`
     }
 `
 
-const FullCard = ({ products }) => {
+const FullCard = () => {
     const { title } = useParams();
+    const products = useSelector(state => state.cartReducer.products)
 
     return (
         <FullCardStyle>
-            {products.filter(product => product.title === title).map((product, id) => (
-                <div className="Flex-Wrapper" key={id}>
+            {products.filter(product => product.title === title).map((product) => (
+                <div className="Flex-Wrapper" key={product.id}>
                     
                     <div className="Flex-Right-Half">
                         <img src={product.image} alt="" />

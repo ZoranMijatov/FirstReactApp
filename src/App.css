@@ -19,7 +19,7 @@
 .Flex-Wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
 }
 
 .Menu {
@@ -30,7 +30,7 @@
   padding-right: 25px;
 }
 
-svg {
+.iconLeft {
   padding-left: 25px;
 }
 
@@ -59,16 +59,36 @@ svg {
   right: -350px;
 }
 
-.AstronautCart {
-  background-image: url('./CartAstronaut.svg');
+.Navbar-Right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.CartSvg {
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+}
+
+.CartSvg:hover {
+  transform: rotate(-5deg)
+}
+
+.CartText {
   position: absolute;
-  background-size: cover;
-  width: 50%;
-  padding-top: 200px;
-  height: 100%;
-  top: 0;
-  left: 0;
-  transform: translate(-28%, 52%);
+  left: -43%;
+  top: -20%;
+  height: 24px;
+  width: 24px;
+  background: rgb(212, 4, 4);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
 h2 {

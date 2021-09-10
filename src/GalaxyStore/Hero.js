@@ -10,10 +10,10 @@ const HeroFlex = styled.div`
     position: relative;
 `
 
-const Hero = ({ products }) => {
+const Hero = () => {
     return (
         <HeroFlex>
-            <Card products={products} />
+            <Card />
         </HeroFlex>
     )
 }

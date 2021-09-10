@@ -1,6 +1,7 @@
 import React from 'react'
 import RandomAdvice from '../APICalls/RandomAdvice';
 import Weather from '../APICalls/Weather';
+import NasaPicture from '../APICalls/NasaPicture';
 import LightThemeProvider from '../../LightThemeProvider';
 import { FlexItemStyle } from './Styles';
 
@@ -17,8 +18,8 @@ const Dashboard = () => {
                     </div>
 
                     <div className="Flex-Item Flex-Item3">
-                        <FlexItemStyle>
-                            <h1>Content</h1>
+                        <FlexItemStyle isApod>
+                            <NasaPicture />
                         </FlexItemStyle>
                     </div>
 

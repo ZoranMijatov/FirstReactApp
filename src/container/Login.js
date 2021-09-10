@@ -3,7 +3,7 @@ import Button from '../Button';
 
 const Login = () => {
     return (
-        <Button><span>Login</span></Button>
+        <Button>Login</Button>
     )
 }
 

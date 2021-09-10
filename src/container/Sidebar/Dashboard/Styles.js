@@ -2,7 +2,7 @@ import styled from "styled-components"
 import theme from "styled-theming";
 
 const backgroundTheme = theme("theme", {
-    light: "rgba(255, 255, 255, 0.2);",
+    light: "rgba(255, 255, 255, 0.5);",
     dark: "rgba(0, 0, 0, 0.2);",
   });
   
@@ -31,7 +31,7 @@ box-shadow: ${shadowTheme};
 border-left: ${borderTheme};
 border-top: ${borderTheme};
     &:first-child {
-        padding: 50px 20px 50px;
+        padding: ${props => props.isApod ? "0 0 20px" : "50px 20px 50px"};
         text-align: center;
         font-family: 'Montserrat', sans-serif;
     }

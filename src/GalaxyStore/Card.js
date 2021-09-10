@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useSelector, useDispatch } from "react-redux";
+import Button from '../Button'
+import * as actions from "../Redux/actions";
 
 const CardStyle = styled.div`
   width: 250px;
@@ -28,9 +31,9 @@ const CardStyle = styled.div`
   & .Product-Link {
     display: block;
     margin: 0 auto;
-    padding-top: 7px;
+    padding-top: 12px;
     width: 140px;
-    height: 43px;
+    height: 37px;
     background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
     background-size: 300% 100%;
     color: #fff;
@@ -47,11 +50,14 @@ const CardStyle = styled.div`
   }
 `;
 
-const Card = ({ products }) => {
+const Card = () => {
+  const products = useSelector(state => state.cartReducer.products);
+  const dispatch = useDispatch();
+
   return (
     <>
-      {products.map((product, id) => (
-        <CardStyle key={id}>
+      {products.map((product) => (
+        <CardStyle key={product.id}>
           <div className="card-content">
             <img src={product.image} alt="" />
             <h2>{product.title}</h2>
@@ -59,6 +65,7 @@ const Card = ({ products }) => {
             <Link className="Product-Link" to={`/cards/${product.title}`}>
               View Product
             </Link>
+            <Button onClick={() => dispatch({ type: 'ADD_TO_CART' })}>Buy now</Button>
           </div>
         </CardStyle>
       ))}

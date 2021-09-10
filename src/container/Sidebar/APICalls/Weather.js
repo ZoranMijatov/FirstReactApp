@@ -11,7 +11,7 @@ const Weather = () => {
     const getWeather = (city) => {
         axios({
             method: 'GET',
-            url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=628f99f67cda15c0c3996777021e6c9c`
+            url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${process.env.REACT_APP_WEATHER_API_KEY}`
         })
         .then((response) => {
             setTemperature(response.data.main.temp - 273.15);
