@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 const Cart = () => {
 
-  const counter = useSelector(state => state.counter);
+  const productCounter = useSelector(state => state.cartReducer.addedProducts);
   return (
       <NavLink to="/cart" activeClassName="Cart-Active">
     <div className="CartSvg">
@@ -18,7 +18,7 @@ const Cart = () => {
             <path d="M41.556 7.24l4.016-4.017a1.46 1.46 0 10-2.065-2.065l-4.016 4.016a1.46 1.46 0 102.065 2.065z" fill="#E6646E"/>
             <path d="M43.507 1.158c.038-.037.08-.066.12-.098.04.032.083.06.12.098.57.57.57 1.495 0 2.065L39.73 7.24c-.037.037-.08.066-.12.098-.04-.032-.082-.06-.12-.098a1.46 1.46 0 010-2.065l4.016-4.016z" fill="#FF8087"/>
         </svg>
-            <p className="CartText">{counter}</p>
+            <p className="CartText">{productCounter.length}</p>
     </div>
       </NavLink>
   );

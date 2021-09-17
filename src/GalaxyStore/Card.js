@@ -65,7 +65,7 @@ const Card = () => {
             <Link className="Product-Link" to={`/cards/${product.title}`}>
               View Product
             </Link>
-            <Button onClick={() => dispatch({ type: 'ADD_TO_CART' })}>Buy now</Button>
+            <Button IsGhost onClick={() => dispatch(actions.addToCart(product.id))}>Buy now</Button>
           </div>
         </CardStyle>
       ))}

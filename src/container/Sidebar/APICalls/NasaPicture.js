@@ -16,7 +16,7 @@ const NasaPicture = () => {
         .then
         ((response) => {
             setState({
-                apod:(response.data.hdurl), 
+                apod:(response.data.url), 
                 apodInfo:(response.data.explanation), 
                 apodTitle:(response.data.title)})
         })

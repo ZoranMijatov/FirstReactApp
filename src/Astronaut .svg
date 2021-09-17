@@ -875,7 +875,7 @@
 						<clipPath id="SVGID_2_">
 							<use xlink:href="#SVGID_1_"  overflow="visible"/>
 						</clipPath>
-						<g clip-path="url(#SVGID_2_)">
+						<g clipPath="url(#SVGID_2_)">
 							<g>
 								<g>
 									<g>
