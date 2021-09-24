@@ -1,11 +1,14 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { FormWrapper, FormGroup } from './Styles';
-import { Input } from './Styles';
+import { FormWrapper, FormGroup, Input } from "./Styles";
+import gsap from 'gsap';
 
 const RegisterForm = () => {
     let history = useHistory();
+
+    useEffect(() => {
+        gsap.from(".Animate", { opacity: 0, scale: 0.3, stagger: 0.25, duration: 0.5 })
+      }, []);
 
     const strongPass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})");
     const valEmail = new RegExp(/\S+@\S+\.\S+/);
@@ -18,7 +21,7 @@ const RegisterForm = () => {
     })
 
     const goodPass = strongPass.test(errors)
-    const goodEmail = strongPass.test(errors)
+    const goodEmail = valEmail.test(errors)
 
     localStorage.setItem('username', email);
     localStorage.setItem('pwd', password);
@@ -43,7 +46,7 @@ const RegisterForm = () => {
 
     return (
         <FormWrapper>
-            <form onSubmit={handleLogin}>
+            <form className="Animate" onSubmit={handleLogin}>
                 <FormGroup>
                     <h2>Welcome, please register below</h2>
                     

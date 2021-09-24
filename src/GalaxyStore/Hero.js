@@ -1,21 +1,22 @@
-import React from 'react'
-import Card from './Card'
-import styled from 'styled-components'
+import React from "react";
+import Card from "./Card";
+import styled from "styled-components";
 
 const HeroFlex = styled.div`
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-    position: relative;
-`
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  max-width: 1540px;
+`;
 
 const Hero = () => {
-    return (
-        <HeroFlex>
-            <Card />
-        </HeroFlex>
-    )
-}
+  return (
+    <HeroFlex>
+      <Card />
+    </HeroFlex>
+  );
+};
 
-export default Hero
+export default Hero;

@@ -1,22 +1,28 @@
-import React from 'react'
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { LIGHTMODE_TOGGLE } from '../Redux/actions';
+import { LIGHTMODE_TOGGLE } from "../Redux/actions";
 
 const LightModeToggle = () => {
+  const lightModeEnabled = useSelector(
+    (state) => state.preferences.lightModeEnabled
+  );
+  const dispatch = useDispatch();
 
-    const lightModeEnabled = useSelector((state) => state.preferences.lightModeEnabled);
-    const dispatch = useDispatch();
+  return (
+    <label class="label">
+      <div class="toggle">
+        <input
+          class="toggle-state"
+          type="checkbox"
+          name="check"
+          value="check"
+          checked={lightModeEnabled}
+          onChange={() => dispatch({ type: LIGHTMODE_TOGGLE })}
+        />
+        <div class="indicator"></div>
+      </div>
+    </label>
+  );
+};
 
-    return (
-            <label className="switch">
-                <input 
-                type="checkbox" 
-                checked={lightModeEnabled}
-                onChange={() => dispatch({ type: LIGHTMODE_TOGGLE })}
-                />
-                <span className="slider round"></span>
-            </label>
-    )
-}
-
-export default LightModeToggle
+export default LightModeToggle;

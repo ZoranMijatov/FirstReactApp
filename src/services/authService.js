@@ -1,15 +1,17 @@
 export const getLoginData = async (username, password) => {
-  await new Promise((resolve) => setTimeout(resolve, Math.floor(Math.random() * 1500)));
-  const storedName = localStorage.getItem('username');
-  const storedPwd = localStorage.getItem('pwd');
-  if(username === storedName && password === storedPwd){
-    localStorage.setItem('loginSuccess', true)
+  await new Promise((resolve) =>
+    setTimeout(resolve, Math.floor(Math.random() * 1500))
+  );
+  let storedName = localStorage.getItem("username");
+  let storedPwd = localStorage.getItem("pwd");
+  if (username === storedName && password === storedPwd) {
+    localStorage.setItem("loginSuccess", true);
     return Promise.resolve({
-    message: 'Success'
+      message: "Success",
     });
   } else {
     return Promise.reject({
-      message: "Username or password is not valid"
-    })
+      message: "Username or password is not valid",
+    });
   }
 };
