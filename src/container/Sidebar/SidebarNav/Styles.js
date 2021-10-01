@@ -10,6 +10,7 @@ export const StyledNavLink = styled(NavLink)`
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 20px;
+  font-family: Nasa-Font;
 `
 
 export const SidebarWrapper = styled.div`

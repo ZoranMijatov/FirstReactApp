@@ -29,10 +29,6 @@ export const FormGroup = styled.div`
   font-weight: bold;
   padding: 50px 0;
   margin-left: 50px;
-
-  input:focus {
-    border: 3px solid #6253e1;
-  }
 `;
 
 export const Input = styled.input`
@@ -41,10 +37,17 @@ export const Input = styled.input`
       ? "linear-gradient(to right, #6a11cb 0%, #2575fc 100%)"
       : props.Coupon
       ? "#333"
+      : props.AccInfo
+      ? "rgba(255, 255, 255, 0.1)"
       : "#222"};
   text-align: ${(props) => (props.Submit ? "center" : "left")};
   background-size: 300% 100%;
-  width: ${(props) => (props.Submit || props.WeatherInput ? "190px" : props.Coupon ? "270px" : "370px")};
+  width: ${(props) =>
+    props.Submit || props.WeatherInput
+      ? "190px"
+      : props.Coupon
+      ? "270px"
+      : "370px"};
   outline: none;
   border-radius: 7px;
   border: none;
@@ -54,7 +57,8 @@ export const Input = styled.input`
   font-size: 16px;
   cursor: ${(props) => (props.Submit ? "pointer" : "regular")};
   padding-left: ${(props) => (props.Submit ? "0" : "10px")};
-  margin: ${(props) => (props.Submit ? "20px 0 0" : props.Coupon ? "10px 0 30px" : "10px 0 10px")};
+  margin: ${(props) =>
+    props.Submit ? "20px 0 0" : props.Coupon ? "10px 0 30px" : "10px 0 10px"};
 
   &:hover {
     box-shadow: ${(props) =>
@@ -68,7 +72,14 @@ export const Input = styled.input`
     box-shadow: none;
   }
 
+  &:focus {
+    border: ${(props) =>
+      props.AccInfo
+        ? "2px solid rgba(255, 255, 255, 0.3)"
+        : "3px solid #6253e1"};
+  }
+
   ::placeholder {
-    ${props => props.Coupon ? "#777" : "null"};
+    ${(props) => (props.Coupon ? "#777" : "null")};
   }
 `;

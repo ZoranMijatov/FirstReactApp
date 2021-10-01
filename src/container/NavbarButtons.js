@@ -68,7 +68,7 @@ export const Cart = () => {
             fill="#FF8087"
           />
         </svg>
-        <p>{productCounter.length}</p>
+        {productCounter.length >= 1 ? <p>{productCounter.length}</p> : null}
       </Styled.Cart>
     </NavLink>
   );

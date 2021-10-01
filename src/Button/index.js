@@ -4,20 +4,22 @@ export default styled.button`
   position: relative;
   z-index: 10;
   font-family: "Montserrat", sans-serif;
-  background: ${(props) => props.IsGhost ? "transparent" : "linear-gradient(to right, #6a11cb 0%, #2575fc 100%)"};
+  background: ${(props) =>
+    props.IsGhost
+      ? "transparent"
+      : "linear-gradient(to right, #6a11cb 0%, #2575fc 100%)"};
   border-radius: 7px;
-  width: ${(props) => {if(props.Checkout) {
-    return "280px";
-  }
-  else if(props.AddToCart) {
-    return "140px";
-  }
-  else {
-    return "null";
-  }
+  width: ${(props) => {
+    if (props.Checkout) {
+      return "280px";
+    } else if (props.AddToCart || props.Medium) {
+      return "140px";
+    } else {
+      return "null";
+    }
   }};
-  
-  height: ${(props) => props.AddToCart ? "48px" : 'null'};
+
+  height: ${(props) => (props.AddToCart ? "48px" : "null")};
   box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
   background-size: 300% 100%;
   color: white;
@@ -26,7 +28,7 @@ export default styled.button`
   font-weight: 700;
   font-size: 16px;
   margin: ${(props) => (props.Checkout || props.AddToCart ? "0" : "0 1em")};
-  padding: ${(props) => props.AddToCart ? "0" : "18px 43px"};
+  padding: ${(props) => (props.AddToCart ? "0" : "18px 43px")};
   box-shadow: 3px 4px 17px -12px rgba(0, 0, 0, 0.75);
   transition: all 0.1s ease-in-out;
   &:hover {
@@ -38,4 +40,3 @@ export default styled.button`
     text-shadow: ${(props) => (props.IsGhost ? "0 0 7px #fff" : "null")};
   }
 `;
-

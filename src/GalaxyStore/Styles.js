@@ -168,6 +168,8 @@ export const FullCardStyle = styled.div`
   width: 100%;
   height: 75vh;
   background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 7px;
   margin-right: 41px;
 
@@ -182,20 +184,6 @@ export const FullCardStyle = styled.div`
 
     .Wishlist {
       cursor: pointer;
-
-      &:hover svg {
-        animation: rotate 1s linear infinite;
-
-        @keyframes rotate {
-          from {
-            transform: scale(1);
-          }
-
-          to {
-            transform: scale(1.2);
-          }
-        }
-      }
     }
   }
 `;
