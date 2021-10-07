@@ -120,13 +120,6 @@ export const CardWrapper = styled.div`
     box-shadow: 0 5px 20px 5px #00000044;
   }
 
-  & img {
-    top: 0;
-    position: absolute;
-    transform: translate(0, -80%);
-    z-index: -10;
-  }
-
   h2 {
     font-weight: normal;
     font-size: 20px;

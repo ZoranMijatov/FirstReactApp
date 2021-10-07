@@ -1,14 +1,39 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import * as Styled from "./Styles";
 import { Input } from "../../Form/Styles";
 import Astronaut from "./Astronaut.png";
-import Button from "../../Button";
 import gsap from "gsap";
 
 const Profile = () => {
   const NasaCard = React.createRef();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setNewEmail(localStorage.getItem("username") ?? "")
+    const DoB = localStorage.getItem("DoB");
+    setDob(DoB)
+  }, []);
+
+  const [editEmail, setEditEmail] = useState(true)
+  const [editPassword, setEditPassword] = useState(true)
+  const [editDoB, setEditDoB] = useState(true)
+  const [editOccupation, setEditOccupation] = useState(true)
+  const [dob, setDob] = useState("")
+
+  const [newEmail, setNewEmail] = useState("")
+
+  const handleNewEmail = (e) => {
+    const newValue = e.target.value
+    setNewEmail(newValue);
+    localStorage.setItem("username", newValue);
+  }
+
+  const lostFocus = () => {
+    setEditEmail(true);
+  }
+
+  const handleNewInfo = (e) => {
+    e.preventDefault();
+  }
 
   return (
     <Styled.MainWrapper>
@@ -98,20 +123,27 @@ const Profile = () => {
             <img className="AstronautImage" src={`${Astronaut}`} alt="" />
           </div>
           <div className="Text">
-            <Styled.NasaParagraph>Your Email</Styled.NasaParagraph>
-            <Styled.NasaParagraph isMedium>Date of birth</Styled.NasaParagraph>
+            <Styled.NasaParagraph>{newEmail}</Styled.NasaParagraph>
+            <Styled.NasaParagraph isMedium>{dob}</Styled.NasaParagraph>
             <Styled.NasaParagraph isSmall>Astronaut</Styled.NasaParagraph>
           </div>
         </div>
         <p className="ClearanceLevel">Level 5 clearance</p>
       </Styled.Wrapper>
 
-      <form action="">
+      <form onSubmit={handleNewInfo}>
         <h1>Account information</h1>
 
         <label htmlFor="Email">Your Email</label>
-        <Input AccInfo type="text" placeholder="zoran@yahoo.com" />
+        <Input 
+        onChange={handleNewEmail} 
+        AccInfo type="text" 
+        placeholder={newEmail} 
+        onBlur={lostFocus} 
+        readOnly={editEmail} 
+        style={editEmail ? {cursor: 'default'} : {cursor: 'text', border: '2px solid rgba(255, 255, 255, 0.7)'}} />
         <svg
+          onClick={() => setEditEmail(!editEmail)}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 528.899 528.899"
           height="24"
@@ -123,8 +155,9 @@ const Profile = () => {
         </svg>
 
         <label htmlFor="Password">Your Password</label>
-        <Input AccInfo type="password" />
+        <Input AccInfo type="password" placeholder="Password" readOnly={editPassword} style={editPassword ? {cursor: 'default'} : {cursor: 'text'}} />
         <svg
+          onClick={() => setEditPassword(!editPassword)}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 528.899 528.899"
           height="24"
@@ -136,8 +169,9 @@ const Profile = () => {
         </svg>
 
         <label htmlFor="DoB">Date of Birth</label>
-        <Input AccInfo type="text" />
+        <Input AccInfo type="text" placeholder={dob} readOnly={editDoB} style={editDoB ? {cursor: 'default'} : {cursor: 'text'}} />
         <svg
+          onClick={() => setEditDoB(!editDoB)}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 528.899 528.899"
           height="24"
@@ -149,8 +183,9 @@ const Profile = () => {
         </svg>
 
         <label htmlFor="Occupation">Occupation</label>
-        <Input AccInfo type="text" placeholder="Occupation" />
+        <Input AccInfo type="text" placeholder="Occupation" readOnly={editOccupation} style={editOccupation ? {cursor: 'default'} : {cursor: 'text'}} />
         <svg
+          onClick={() => setEditOccupation(!editOccupation)}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 528.899 528.899"
           height="24"
@@ -177,13 +212,11 @@ const Profile = () => {
             <input type="file" accept="image/png, image/jpeg, image.jpg" />
           </label>
         </div>
-        <Button
-          IsGhost
-          Medium
-          style={{ marginTop: "30px", marginRight: "auto", marginLeft: "0" }}
-        >
-          Save
-        </Button>
+        <Input
+            Submit
+            type="submit"
+            value="Update"
+          />
       </form>
     </Styled.MainWrapper>
   );

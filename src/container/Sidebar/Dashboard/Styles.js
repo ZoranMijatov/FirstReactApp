@@ -2,7 +2,7 @@ import styled from "styled-components"
 import theme from "styled-theming";
 
 const backgroundTheme = theme("theme", {
-    light: "rgba(255, 255, 255, 0.5);",
+    light: "rgba(255, 255, 255, 0.1);",
     dark: "rgba(0, 0, 0, 0.2);",
   });
   
@@ -26,7 +26,7 @@ width: ${props => props.width};
 height: ${props => props.height};
 border-radius: 7px;
 background: ${backgroundTheme};
-color: ${textTheme};
+color: #fff;
 box-shadow: ${shadowTheme};
 border-left: ${borderTheme};
 border-top: ${borderTheme};

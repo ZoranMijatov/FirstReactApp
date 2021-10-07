@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FormWrapper = styled.div`
   position: relative;
-  z-index: 1;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   width: 660px;
@@ -20,8 +20,6 @@ export const FormWrapper = styled.div`
 `;
 
 export const FormGroup = styled.div`
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   color: #fff;
@@ -32,6 +30,8 @@ export const FormGroup = styled.div`
 `;
 
 export const Input = styled.input`
+  position: relative;
+  z-index: 100;
   background: ${(props) =>
     props.Submit
       ? "linear-gradient(to right, #6a11cb 0%, #2575fc 100%)"
@@ -75,7 +75,7 @@ export const Input = styled.input`
   &:focus {
     border: ${(props) =>
       props.AccInfo
-        ? "2px solid rgba(255, 255, 255, 0.3)"
+        ? "null"
         : "3px solid #6253e1"};
   }
 

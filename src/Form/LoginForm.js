@@ -8,6 +8,7 @@ const LoginForm = (props) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [pwdReveal, setPwdReveal] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -39,15 +40,19 @@ const LoginForm = (props) => {
 
           <label htmlFor="password">Password:</label>
 
-          <Input
-            className="Input-Fields Input-Password"
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-            style={
-              !strongPass.test(password) ? { border: "0.5px solid red" } : {}
-            }
-          />
+          <div className="PasswordWrapper">
+            <Input
+              className="Input-Fields Input-Password"
+              type={pwdReveal ? 'text' : 'password'}
+              value={password}
+              onChange={handlePasswordChange}
+            />
+             <svg style={{right: '15px'}} width="24" height="24" onClick={() => setPwdReveal(!pwdReveal)} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 7C9.934 7 4.798 10.776 3 16c1.798 5.224 6.934 9 13 9s11.202-3.776 13-9c-1.798-5.224-6.934-9-13-9z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+                <circle cx="16" cy="16" fill="none" r="5" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+                <path stroke= {pwdReveal ? null : "#fff"} stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m3 3 26 26"/>
+              </svg>
+          </div>
 
           {!strongPass.test(password) && (
             <p style={{ color: "red" }}>Invalid Password</p>

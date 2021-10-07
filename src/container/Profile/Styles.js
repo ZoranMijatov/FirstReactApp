@@ -71,6 +71,8 @@ export const MainWrapper = styled.div`
       opacity: 0.3;
       cursor: pointer;
       transition: opacity 0.3s;
+      position: relative;
+      z-index: 110;
 
       &:hover {
         opacity: 1;
@@ -88,12 +90,7 @@ export const MainWrapper = styled.div`
 
   h1 {
     font-family: Nasa-Font;
-    background: #ffffff;
-    background: -webkit-linear-gradient(to top, #ffffff 40%, #999999 100%);
-    background: -moz-linear-gradient(to top, #ffffff 40%, #999999 100%);
-    background: linear-gradient(to top, #ffffff 40%, #999999 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #fff;
     font-weight: bold;
   }
 `;
@@ -241,7 +238,7 @@ export const NasaParagraph = styled.p`
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
-  padding-right: ${(props) => (props.isMedium ? "50px" : "140px")};
+  width: 250px;
   font-style: italic;
   font-weight: bold;
   background: rgba(255, 255, 255, 0.7);

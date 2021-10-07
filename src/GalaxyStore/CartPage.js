@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import * as actions from "../Redux/actions";
@@ -11,10 +11,21 @@ const CartPage = () => {
   const products = useSelector((state) => state.cartReducer.addedProducts);
   const subTotal = useSelector((state) => state.cartReducer.sum);
   const dispatch = useDispatch();
-  const vat = Math.floor(subTotal * 0.2);
-  const total = subTotal + vat;
-  console.log(products);
-  const receipt = React.createRef();
+
+  const vat = useMemo(() => Math.floor(subTotal * 0.2), [subTotal])
+
+  const [vat2, setvat2] = useState(0.0)
+  useEffect(() => {
+    setvat2(subTotal * 0.2)
+  }, [subTotal])
+
+
+  const total = useMemo(() => {
+    return subTotal + vat
+  }, [subTotal, vat])
+
+  const receipt = React.useRef(null);
+
 
   useEffect(() => {
     gsap.to(receipt.current, { duration: 1, x: 0, startAt: { x: 500 } });
@@ -36,9 +47,7 @@ const CartPage = () => {
     products.map((product) => {
       return (
         <Styled.ListedItem className="Animated-Item" key={product.id}>
-          <div>
-            <img src={product.image} alt={product.image} className="" />
-          </div>
+          <div>{product.image}</div>
 
           <div>
             <h4 style={{ fontSize: "20px" }}>

@@ -1,10 +1,11 @@
 import * as actions from "../actions";
 import { combineReducers } from "redux";
-import Aircraft from "../ItemsSVG/Aircraft.svg";
-import Asteroid from "../ItemsSVG/Asteroid.svg";
-import Earth from "../ItemsSVG/Earth.svg";
-import Telescope from "../ItemsSVG/Telescope.svg";
-import Rocket from "../ItemsSVG/Rocket.svg";
+import Sun from "../ItemsSVG/Sun";
+import Mars from "../ItemsSVG/Mars";
+import Saturn from "../ItemsSVG/Saturn";
+import Telescope from "../ItemsSVG/Telescope";
+import Comet from "../ItemsSVG/Comet";
+import Neptune from "../ItemsSVG/Neptune";
 
 const preferences = (state = { lightModeEnabled: false }, action) => {
   switch (action.type) {
@@ -20,7 +21,7 @@ const initialState = {
   products: [
     {
       id: 1,
-      image: Rocket,
+      image: <Sun />,
       title: "The Sun",
       slang: "Fireball that hangs in the sky",
       description:
@@ -30,7 +31,7 @@ const initialState = {
     {
       id: 2,
       image: "Link, Link, link, link",
-      title: "C4",
+      title: "Earth",
       slang: "A plastic explosive that blows the shit out of everything.",
       description:
         "Explosive material that looks and feels like white clay. Most often used by military personnel, terrorists and modern-day bank robbers! C-4 can also be called Composition 4 since it includes three other types of explosives along with the original base catalyst. Form of plastique.",
@@ -38,15 +39,15 @@ const initialState = {
     },
     {
       id: 3,
-      image: Aircraft,
-      title: "Rocket",
+      image: "Link, Link, link, link",
+      title: "Moon",
       description: "Text about the product",
       price: 25000,
     },
     {
       id: 4,
-      image: "Link, Link, link, link",
-      title: "Atom-Bomb",
+      image: <Mars />,
+      title: "Mars",
       description: "Text about the product",
       price: 8250000000,
     },
@@ -66,29 +67,29 @@ const initialState = {
     },
     {
       id: 7,
-      image: Earth,
-      title: "Earth",
+      image: <Neptune />,
+      title: "Neptune",
       description: "Text about the product",
       price: 5000000000000000,
     },
     {
       id: 8,
-      image: Asteroid,
-      title: "Asteroid",
+      image: <Saturn />,
+      title: "Saturn",
       description: "Text about the product",
       price: 1000000,
     },
     {
       id: 9,
-      image: Telescope,
-      title: "Telescope",
+      image: <Comet />,
+      title: "Comet",
       description: "Text about the product",
       price: 700,
     },
     {
       id: 10,
-      image: "Link, Link, link, link",
-      title: "Black-Hole",
+      image: <Telescope />,
+      title: "Telescope",
       description: "Text about the product",
       price: 42,
     },

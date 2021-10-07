@@ -18,7 +18,7 @@ const FullCard = () => {
         .map((product) => (
           <div className="FlexWrap" key={product.id}>
             <div className="Flex-Right-Half">
-              <img src={product.image} alt="" />
+              <div>{product.image}</div>
             </div>
 
             <div style={{ paddingTop: "50px" }}>

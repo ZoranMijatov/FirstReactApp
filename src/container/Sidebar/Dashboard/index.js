@@ -9,7 +9,7 @@ const Dashboard = () => {
     return (
             <LightThemeProvider>
 
-                <div style={{display: "flex", flexWrap: "wrap", gap: "10px"}}>
+                <div style={{display: "flex", flexWrap: "wrap", gap: "15px"}}>
                     <div>
                         <FlexItemStyle><Weather /></FlexItemStyle>   
                     </div>
