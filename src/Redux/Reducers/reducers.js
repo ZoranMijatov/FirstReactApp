@@ -5,7 +5,9 @@ import Mars from "../ItemsSVG/Mars";
 import Saturn from "../ItemsSVG/Saturn";
 import Telescope from "../ItemsSVG/Telescope";
 import Comet from "../ItemsSVG/Comet";
-import Neptune from "../ItemsSVG/Neptune";
+import PizzaPlanet from "../ItemsSVG/PizzaPlanet";
+import Earth from "../ItemsSVG/Earth";
+import Moon from "../ItemsSVG/Moon";
 
 const preferences = (state = { lightModeEnabled: false }, action) => {
   switch (action.type) {
@@ -30,7 +32,7 @@ const initialState = {
     },
     {
       id: 2,
-      image: "Link, Link, link, link",
+      image: <Earth />,
       title: "Earth",
       slang: "A plastic explosive that blows the shit out of everything.",
       description:
@@ -39,8 +41,8 @@ const initialState = {
     },
     {
       id: 3,
-      image: "Link, Link, link, link",
-      title: "Moon",
+      image: <Moon />,
+      title: "The Moon",
       description: "Text about the product",
       price: 25000,
     },
@@ -67,8 +69,8 @@ const initialState = {
     },
     {
       id: 7,
-      image: <Neptune />,
-      title: "Neptune",
+      image: <PizzaPlanet />,
+      title: "Pizza planet",
       description: "Text about the product",
       price: 5000000000000000,
     },

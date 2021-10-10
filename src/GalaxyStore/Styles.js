@@ -109,15 +109,28 @@ export const CardWrapper = styled.div`
   flex-direction: column;
   border-radius: 7px;
   background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   border-left: 1.5px solid rgb(255, 255, 255, 0.18);
   border-top: 1.5px solid rgb(255, 255, 255, 0.18);
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  transition: scale 0.5s ease-in-out;
 
   &:hover {
     transition-duration: 150ms;
     box-shadow: 0 5px 20px 5px #00000044;
+    scale: 1.07;
+
+    .FloatingSVG {
+      animation-name: floating;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+
+    @keyframes floating {
+      0% { transform: translate(0,  0px); }
+      50%  { transform: translate(0, 10px); }
+      100%   { transform: translate(0, -0px); }   
+    }
   }
 
   h2 {

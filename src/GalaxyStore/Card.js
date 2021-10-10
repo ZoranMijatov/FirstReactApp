@@ -31,7 +31,7 @@ const Card = () => {
       {products.map((product) => (
         <Styled.CardWrapper className="Animate" key={product.id}>
           <Styled.Wrapper ContentWrapper>
-            <div>{product.image}</div>
+            <div className="FloatingSVG">{product.image}</div>
             <h2>{product.title}</h2>
             <p>{product.price}$</p>
 
