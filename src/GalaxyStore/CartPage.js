@@ -12,20 +12,13 @@ const CartPage = () => {
   const subTotal = useSelector((state) => state.cartReducer.sum);
   const dispatch = useDispatch();
 
-  const vat = useMemo(() => Math.floor(subTotal * 0.2), [subTotal])
-
-  const [vat2, setvat2] = useState(0.0)
-  useEffect(() => {
-    setvat2(subTotal * 0.2)
-  }, [subTotal])
-
+  const vat = useMemo(() => Math.floor(subTotal * 0.2), [subTotal]);
 
   const total = useMemo(() => {
-    return subTotal + vat
-  }, [subTotal, vat])
+    return subTotal + vat;
+  }, [subTotal, vat]);
 
   const receipt = React.useRef(null);
-
 
   useEffect(() => {
     gsap.to(receipt.current, { duration: 1, x: 0, startAt: { x: 500 } });
@@ -47,7 +40,7 @@ const CartPage = () => {
     products.map((product) => {
       return (
         <Styled.ListedItem className="Animated-Item" key={product.id}>
-          <div>{product.image}</div>
+          <div style={{ paddingLeft: "20px;" }}>{product.imageSmall}</div>
 
           <div>
             <h4 style={{ fontSize: "20px" }}>
@@ -119,7 +112,7 @@ const CartPage = () => {
     <Styled.CartWrapper>
       <div style={{ flex: "0 60%" }}>
         <h2 className="Animated-Text">You have ordered:</h2>
-        <ul>{addedProducts}</ul>
+        <ul style={{ height: "600px", overflowY: "auto" }}>{addedProducts}</ul>
       </div>
 
       <Styled.Wrapper Receipt ref={receipt}>

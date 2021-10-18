@@ -32,8 +32,46 @@ const Card = () => {
         <Styled.CardWrapper className="Animate" key={product.id}>
           <Styled.Wrapper ContentWrapper>
             <div className="FloatingSVG">{product.image}</div>
-            <h2>{product.title}</h2>
-            <p>{product.price}$</p>
+            <h2 className={product.id === 2 ? "dark" : ""}>{product.title}</h2>
+            {product.id === 1 ? (
+              <div className="Ribbon">
+                <p
+                  style={{
+                    fontSize: "10px",
+                    textTransform: "uppercase",
+                    letterSpacing: "1px",
+                    fontFamily: "Montserrat",
+                  }}
+                >
+                  hot deal
+                </p>
+              </div>
+            ) : product.id === 6 ? (
+              <div
+                className="Ribbon"
+                style={{
+                  backgroundColor: "#3bb78f",
+                  backgroundImage:
+                    "linear-gradient(315deg, #3bb78f 0%, #0bab64 74%)",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: "10px",
+                    textTransform: "uppercase",
+                    letterSpacing: "1px",
+                    fontFamily: "Montserrat",
+                  }}
+                >
+                  area 51
+                </p>
+              </div>
+            ) : null}
+            {product.id === 10 ? (
+              <p>{product.price}RSD</p>
+            ) : (
+              <p>{product.price}$</p>
+            )}
 
             <div style={{ display: "flex", gap: "3px" }}>
               <svg

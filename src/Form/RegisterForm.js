@@ -5,7 +5,9 @@ import { FormWrapper, FormGroup, Input } from "./Styles";
 const RegisterForm = () => {
   let history = useHistory();
 
-  const strongPass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})");
+  const strongPass = new RegExp(
+    "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})"
+  );
   const valEmail = new RegExp(/\S+@\S+\.\S+/);
 
   const [email, setEmail] = useState("");
@@ -68,19 +70,50 @@ const RegisterForm = () => {
           <label htmlFor="password">Password:</label>
 
           <div className="PasswordWrapper">
-              <Input
-                type={pwdReveal ? 'text' : 'password'}
-                value={password}
-                onChange={handlePasswordChange}
-                style={
-                  !strongPass.test(password) ? { border: "0.5px solid red" } : {}
-                }
+            <Input
+              type={pwdReveal ? "text" : "password"}
+              value={password}
+              onChange={handlePasswordChange}
+              style={
+                !strongPass.test(password) ? { border: "0.5px solid red" } : {}
+              }
+            />
+            <svg
+              width="24"
+              height="24"
+              onClick={() => setPwdReveal(!pwdReveal)}
+              viewBox="0 0 32 32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 7C9.934 7 4.798 10.776 3 16c1.798 5.224 6.934 9 13 9s11.202-3.776 13-9c-1.798-5.224-6.934-9-13-9z"
+                fill="none"
+                stroke="#fff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="2"
               />
-                <svg width="24" height="24" onClick={() => setPwdReveal(!pwdReveal)} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M16 7C9.934 7 4.798 10.776 3 16c1.798 5.224 6.934 9 13 9s11.202-3.776 13-9c-1.798-5.224-6.934-9-13-9z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
-                  <circle cx="16" cy="16" fill="none" r="5" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
-                  <path stroke= {pwdReveal ? null : "#fff"} stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="m3 3 26 26"/>
-                </svg>
+              <circle
+                cx="16"
+                cy="16"
+                fill="none"
+                r="5"
+                stroke="#fff"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="2"
+              />
+              <path
+                stroke={pwdReveal ? null : "#fff"}
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+                stroke-width="2"
+                d="m3 3 26 26"
+              />
+            </svg>
           </div>
 
           {!strongPass.test(password) && (

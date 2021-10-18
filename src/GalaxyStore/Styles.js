@@ -11,6 +11,47 @@ export const Paragraph = styled.p`
 `;
 
 export const Wrapper = styled.div`
+  .Ribbon {
+    position: absolute;
+    padding: 0 0.3em;
+    font-size: 2em;
+    margin: 0 0 0 -0.625em;
+    line-height: 1.075em;
+    color: #e6e2c8;
+    border-radius: 0 0.156em 0.156em 0;
+    background: #b92636;
+    box-shadow: -1px 2px 3px rgba(0, 0, 0, 0.5);
+    left: 7%;
+    bottom: 30%;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+    }
+
+    &:before {
+      width: 0.469em;
+      height: 100%;
+      padding: 0 0 0.438em;
+      top: 0;
+      left: -0.469em;
+      background: inherit;
+      border-radius: 0.313em 0 0 0.313em;
+    }
+
+    &:after {
+      width: 0.313em;
+      height: 0.313em;
+      background: rgba(0, 0, 0, 0.35);
+      bottom: -0.313em;
+      left: -0.313em;
+      border-radius: 0.313em 0 0 0.313em;
+      box-shadow: inset -1px 2px 2px rgba(0, 0, 0, 0.3);
+    }
+  }
+
   display: flex;
   justify-content: ${(props) =>
     props.SpaceBetween ? "space-between" : "center"};
@@ -60,8 +101,6 @@ export const Wrapper = styled.div`
       : "null"};
 
   border-radius: 7px;
-  box-shadow: ${(props) =>
-    props.Receipt ? "20px 20px 50px rgba(255, 255, 255, 0.2)" : "null"};
   width: ${(props) => (props.Receipt ? "280px" : "null")};
   height: ${(props) => (props.Receipt ? "600px" : "null")};
   margin: ${(props) => (props.Receipt ? "60px 120px 0 0" : "null")};
@@ -69,6 +108,7 @@ export const Wrapper = styled.div`
 
 export const CartWrapper = styled.div`
   display: flex;
+  overflow: hidden;
   justify-content: space-between;
   color: white;
   flex: 50%;
@@ -112,12 +152,10 @@ export const CardWrapper = styled.div`
   border-left: 1.5px solid rgb(255, 255, 255, 0.18);
   border-top: 1.5px solid rgb(255, 255, 255, 0.18);
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-  transition: scale 0.5s ease-in-out;
 
   &:hover {
     transition-duration: 150ms;
     box-shadow: 0 5px 20px 5px #00000044;
-    scale: 1.07;
 
     .FloatingSVG {
       animation-name: floating;
@@ -127,9 +165,15 @@ export const CardWrapper = styled.div`
     }
 
     @keyframes floating {
-      0% { transform: translate(0,  0px); }
-      50%  { transform: translate(0, 10px); }
-      100%   { transform: translate(0, -0px); }   
+      0% {
+        transform: translate(0, 0px);
+      }
+      50% {
+        transform: translate(0, 7px);
+      }
+      100% {
+        transform: translate(0, -0px);
+      }
     }
   }
 

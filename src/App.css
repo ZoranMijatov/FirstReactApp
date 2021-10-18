@@ -16,8 +16,6 @@
   width: 100%;
   background-position: center;
   height: 100vh;
-  overflow: hidden;
-  background-attachment: fixed;
 }
 
 .Container {
@@ -32,6 +30,8 @@
   align-items: center;
   padding-top: 10px;
   padding-right: 25px;
+  position: relative;
+  z-index: 10;
 }
 
 .PasswordWrapper {
@@ -67,9 +67,10 @@
   width: 100%;
   height: 100%;
   background-position: center;
-  padding-top: 200px;
+  padding-top: 90px;
   top: 19%;
   right: -350px;
+  margin-top: 40px;
 }
 
 h2 {

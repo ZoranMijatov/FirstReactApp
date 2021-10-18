@@ -2,6 +2,7 @@ export const LIGHTMODE_TOGGLE = "LIGHTMODE_TOGGLE";
 export const SET_STEPS = "SET_STEPS";
 export const INCREMENT_CURRENT_STEP = "INCREMENT_CURRENT_STEP";
 export const DECREMENT_CURRENT_STEP = "DECREMENT_CURRENT_STEP";
+export const ISLOGGED_IN = 'ISLOGGED_IN';
 
 export const toggleDarkTheme = () => ({
   type: LIGHTMODE_TOGGLE,
@@ -31,3 +32,10 @@ export const subQty = (id) => {
     id,
   };
 };
+
+export const setLogin = (isLoggedin) => {
+  return { 
+    type: ISLOGGED_IN,
+    isLoggedin
+  }
+}

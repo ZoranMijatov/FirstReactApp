@@ -1,13 +1,15 @@
 import * as actions from "../actions";
 import { combineReducers } from "redux";
-import Sun from "../ItemsSVG/Sun";
-import Mars from "../ItemsSVG/Mars";
-import Saturn from "../ItemsSVG/Saturn";
+import { Sun, SunSmall } from "../ItemsSVG/Sun";
+import Robot from "../ItemsSVG/Robot";
 import Telescope from "../ItemsSVG/Telescope";
-import Comet from "../ItemsSVG/Comet";
+import Bomb from "../ItemsSVG/Bomb";
 import PizzaPlanet from "../ItemsSVG/PizzaPlanet";
 import Earth from "../ItemsSVG/Earth";
 import Moon from "../ItemsSVG/Moon";
+import { Bread, BreadSmall } from "../ItemsSVG/Bread";
+import Ufo from "../ItemsSVG/Ufo";
+import AtomBomb from "../ItemsSVG/AtomBomb";
 
 const preferences = (state = { lightModeEnabled: false }, action) => {
   switch (action.type) {
@@ -24,6 +26,7 @@ const initialState = {
     {
       id: 1,
       image: <Sun />,
+      imageSmall: <SunSmall />,
       title: "The Sun",
       slang: "Fireball that hangs in the sky",
       description:
@@ -48,52 +51,53 @@ const initialState = {
     },
     {
       id: 4,
-      image: <Mars />,
-      title: "Mars",
-      description: "Text about the product",
-      price: 8250000000,
-    },
-    {
-      id: 5,
-      image: "Link, Link, link, link",
-      title: "Alien",
-      description: "Text about the product",
-      price: 3.5,
-    },
-    {
-      id: 6,
-      image: "Link, Link, link, link",
-      title: "Ufo",
-      description: "Text about the product",
-      price: 20,
-    },
-    {
-      id: 7,
       image: <PizzaPlanet />,
       title: "Pizza planet",
       description: "Text about the product",
       price: 5000000000000000,
     },
     {
+      id: 5,
+      image: <Telescope />,
+      title: "Rocket",
+      description: "Text about the product",
+      price: 45,
+    },
+    {
+      id: 6,
+      image: <Ufo />,
+      title: "Alien Spaceship",
+      description: "Text about the product",
+      price: 20,
+    },
+    {
+      id: 7,
+      image: <AtomBomb />,
+      title: "Some weapon or smth",
+      description: "Text about the product",
+      price: 420,
+    },
+    {
       id: 8,
-      image: <Saturn />,
-      title: "Saturn",
+      image: <Robot />,
+      title: "Depressed Android",
       description: "Text about the product",
       price: 1000000,
     },
     {
       id: 9,
-      image: <Comet />,
-      title: "Comet",
+      image: <Bomb />,
+      title: "Bomb",
       description: "Text about the product",
       price: 700,
     },
     {
       id: 10,
-      image: <Telescope />,
-      title: "Telescope",
+      image: <Bread />,
+      imageSmall: <BreadSmall />,
+      title: "Bread planet",
       description: "Text about the product",
-      price: 42,
+      price: 45,
     },
   ],
 
@@ -173,4 +177,17 @@ const cartReducer = (state = initialState, action) => {
   }
 };
 
-export default combineReducers({ preferences, cartReducer });
+const Logger = (state = { isLoggedIn: false }, action) => {
+  switch (action.type) {
+    case "ISLOGGED_IN":
+      return {
+        ...state,
+        isLoggedIn: action.isLoggedin,
+      };
+
+    default:
+      return state;
+  }
+};
+
+export default combineReducers({ preferences, cartReducer, Logger });
