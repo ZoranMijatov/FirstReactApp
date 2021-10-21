@@ -33,7 +33,7 @@ const Card = () => {
           <Styled.Wrapper ContentWrapper>
             <div className="FloatingSVG">{product.image}</div>
             <h2 className={product.id === 2 ? "dark" : ""}>{product.title}</h2>
-            {product.id === 1 ? (
+            {product.id === 1 || product.id === 10 ? (
               <div className="Ribbon">
                 <p
                   style={{
@@ -46,7 +46,7 @@ const Card = () => {
                   hot deal
                 </p>
               </div>
-            ) : product.id === 6 ? (
+            ) : product.id === 8 ? (
               <div
                 className="Ribbon"
                 style={{
@@ -67,10 +67,32 @@ const Card = () => {
                 </p>
               </div>
             ) : null}
-            {product.id === 10 ? (
-              <p>{product.price}RSD</p>
+            {product.id === 6 ? (
+              <p>
+                {product.price}
+                <span
+                  style={{
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    marginLeft: "2px",
+                  }}
+                >
+                  RSD
+                </span>
+              </p>
             ) : (
-              <p>{product.price}$</p>
+              <p>
+                {product.price}
+                <span
+                  style={{
+                    fontSize: "18px",
+                    fontWeight: "600",
+                    marginLeft: "2px",
+                  }}
+                >
+                  €
+                </span>
+              </p>
             )}
 
             <div style={{ display: "flex", gap: "3px" }}>

@@ -3,11 +3,6 @@ import { useState } from "react";
 import { FormWrapper, FormGroup, Input } from "./Styles";
 
 const LoginForm = (props) => {
-  const strongPass = new RegExp(
-    "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})"
-  );
-  const valEmail = new RegExp(/\S+@\S+\.\S+/);
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [pwdReveal, setPwdReveal] = useState(false);
@@ -34,7 +29,6 @@ const LoginForm = (props) => {
               type="text"
               value={email}
               onChange={handleEmailChange}
-              style={!valEmail.test(email) ? { border: "0.5px solid red" } : {}}
             />
 
             <label htmlFor="password">Password:</label>
@@ -85,12 +79,7 @@ const LoginForm = (props) => {
               </svg>
             </div>
 
-            <Input
-              type="submit"
-              Submit
-              value="Login"
-              disabled={!strongPass.test(password) || !valEmail.test(email)}
-            />
+            <Input type="submit" Submit value="Login" />
           </FormGroup>
         </form>
       </div>

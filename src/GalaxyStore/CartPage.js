@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import * as actions from "../Redux/actions";
@@ -40,7 +40,7 @@ const CartPage = () => {
     products.map((product) => {
       return (
         <Styled.ListedItem className="Animated-Item" key={product.id}>
-          <div style={{ paddingLeft: "20px;" }}>{product.imageSmall}</div>
+          <div style={{ paddingLeft: "20px;" }}>{product.image}</div>
 
           <div>
             <h4 style={{ fontSize: "20px" }}>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import FancyImage1 from "./SpaceThing.jpg";
-import FancyTexture1 from "./white-simple-textured-design-background.jpg";
+import FancyImage1 from "./SpaceThing-min.jpg";
+import FancyTexture1 from "./white-simple-textured-design-background-min.jpg";
 
 export const MainWrapper = styled.div`
   display: flex;

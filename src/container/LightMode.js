@@ -9,19 +9,14 @@ const LightModeToggle = () => {
   const dispatch = useDispatch();
 
   return (
-    <label className="label">
-      <div className="toggle">
-        <input
-          className="toggle-state"
-          type="checkbox"
-          name="check"
-          value="check"
-          checked={lightModeEnabled}
-          onChange={() => dispatch({ type: LIGHTMODE_TOGGLE })}
-        />
-        <div className="indicator"></div>
-      </div>
-    </label>
+    <div class="switch">
+      <input
+        type="checkbox"
+        checked={lightModeEnabled}
+        onChange={() => dispatch({ type: LIGHTMODE_TOGGLE })}
+      />
+      <label></label>
+    </div>
   );
 };
 
