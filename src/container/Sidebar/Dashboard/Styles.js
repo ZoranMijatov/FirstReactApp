@@ -22,8 +22,11 @@ export const GridWrapper = styled.div`
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  margin: 0 30px;
+  /* padding-top: 30px; */
+  margin: 0 auto;
   max-width: 1450px;
+  width: 100%;
+  /* padding-right: 70px; */
 `;
 
 export const GridChild = styled.div`
@@ -54,7 +57,7 @@ export const GridChild = styled.div`
   }
 
   .crawl {
-    margin-top: 30%;
+    margin-top: 70%;
     color: #feda4a;
     font-family: "Nasa-Font";
     font-weight: 600;
@@ -63,36 +66,32 @@ export const GridChild = styled.div`
     position: relative;
     top: -100px;
     transform-origin: 50% 100%;
-    animation: crawl 15s linear;
+    animation: crawl 16s;
     animation-iteration-count: infinite;
+    animation-timing-function: linear;
 
     p {
-      margin-bottom: 30px;
-      font-size: 34px;
-      line-height: 120%;
+      font-size: 43px;
+      line-height: 90%;
     }
 
     span {
-      font-size: 70px;
-      line-height: 150%;
+      font-size: 100px;
+      line-height: 120%;
     }
 
     div {
-      margin: 34px 0;
+      margin-top: 10%;
     }
   }
 
   @keyframes crawl {
     0% {
-      /* The element starts below the screen */
       top: 0;
-      /* Rotate the text 20 degrees but keep it close to the viewer */
       transform: rotateX(20deg) translateZ(0);
     }
     100% {
-      /* This is a magic number, but using a big one to make sure the text is fully off the screen at the end */
       top: -3000px;
-      /* Slightly increasing the rotation at the end and moving the text far away from the viewer */
       transform: rotateX(25deg) translateZ(-1000px);
     }
   }

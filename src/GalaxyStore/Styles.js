@@ -112,6 +112,7 @@ export const CartWrapper = styled.div`
   justify-content: space-between;
   color: white;
   flex: 50%;
+  padding-left: 10vw;
 `;
 
 export const Cart = styled.div`

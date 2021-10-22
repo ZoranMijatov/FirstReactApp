@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { NavLink } from "react-router-dom"
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
@@ -11,12 +11,12 @@ export const StyledNavLink = styled(NavLink)`
   padding-bottom: 7px;
   padding-left: 20px;
   font-family: Nasa-Font;
-`
+`;
 
 export const SidebarWrapper = styled.div`
   height: 100%;
-  width: 20vw;
+  width: 10vw;
   display: flex;
   flex-direction: column;
   gap: 25px;
-`
+`;

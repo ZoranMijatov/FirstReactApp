@@ -4,7 +4,9 @@ import FancyTexture1 from "./white-simple-textured-design-background-min.jpg";
 
 export const MainWrapper = styled.div`
   display: flex;
-  gap: 100px;
+  gap: 140px;
+  margin: 0 auto;
+  padding-top: 30px;
 
   form {
     display: flex;
@@ -12,7 +14,7 @@ export const MainWrapper = styled.div`
     padding: 30px;
     background: rgba(74, 125, 255, 0.1);
     border-radius: 10px;
-    transform: scale(1);
+    transform: scale(1.09);
 
     /* animation: glitchy 0.3s ease 0.3s infinite;
 
@@ -106,10 +108,9 @@ export const Wrapper = styled.div`
   box-shadow: rgba(255, 255, 255, 0.5) 2px 7px 30px 0px;
   transform: rotate(-5deg);
   transition: all 0.5s;
-  scale: 0.9;
 
   &:hover {
-    scale: 1.07;
+    scale: 1.2;
     transform: rotate(0);
 
     &:after {

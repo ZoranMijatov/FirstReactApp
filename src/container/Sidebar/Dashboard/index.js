@@ -44,14 +44,17 @@ const Dashboard = () => {
         >
           <div class="crawl">
             <div class="title">
-              <p>React Galaxy</p>
-              <h1>Hover to roll</h1>
+              <h1
+                style={{
+                  marginBottom: "20%",
+                  fontSize: "100px",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                React Galaxy
+              </h1>
             </div>
 
-            <div>
-              <p>Created by</p>
-              <span>Zoran</span>
-            </div>
             <div>
               <p>Coded by</p>
               <span>Zoran</span>
@@ -79,11 +82,12 @@ const Dashboard = () => {
           </div>
         </GridChild>
 
-        <GridChild isSixthChild>
+        <GridChild
+          isSixthChild
+          style={{ background: "#191919", border: "none" }}
+        >
           <h5>Lights on</h5>
-          <div className="switch-wrapper">
-            <LightModeToggle />
-          </div>
+          <LightModeToggle />
           <h5>Go dark</h5>
         </GridChild>
       </GridWrapper>
